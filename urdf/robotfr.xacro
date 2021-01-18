@@ -12,7 +12,7 @@
      <inertial>
       <origin xyz="0.00072554 2.2065E-05 0.024268" rpy="0 0 0" />
       <mass value="0.01" />
-      <inertia ixx="10" ixy="0" ixz="0" iyy="10" iyz="0" izz="10" />
+      <inertia ixx="1000" ixy="0" ixz="0" iyy="1000" iyz="0" izz="1000" />
     </inertial> 
     <!-- Visualizacion del robot-->
     <visual>

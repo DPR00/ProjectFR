@@ -53,7 +53,7 @@ def fkine(q):
     """
     # Longitudes (en metros)
     m=0.001
-    a_= 32*m; b_= 127*m; c_= 108*m # 29.686, 127
+    a_= 32*m; b_= 127*m; c_= 108*m 
     d_= 20*m; e_= 169*m; f_= 70*m
     # Matrices DH (completar), emplear la funcion dh con los parametros DH para cada articulacion
     d =np.array([b_, 0, 0, e_, 0, -f_])
