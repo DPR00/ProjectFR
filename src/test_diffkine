@@ -14,9 +14,9 @@ print('starting motion ... ')
 pub = rospy.Publisher('joint_states', JointState, queue_size=10)
 
 # Files for the logs
-fxcurrent = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/xcurrent.txt", "w")                
-fxdesired = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/xdesired.txt", "w")
-fq = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/q.txt", "w")
+fxcurrent = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/xcurrent_diffk.txt", "w")                
+fxdesired = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/xdesired_diffk.txt", "w")
+fq = open("/home/diegopalma/Documents/ROSProjects/lab_ws/src/projectfr/tmp/q_diffk.txt", "w")
 
 # Markers for the current and desired positions
 bmarker_current  = BallMarker(color['RED'])
@@ -89,7 +89,7 @@ while not rospy.is_shutdown():
     bmarker_current.xyz(x)
     # Wait for the next iteration
     rate.sleep()
-
+print(q)
 print('ending motion ...')
 fxcurrent.close()
 fxdesired.close()

@@ -12,9 +12,9 @@ import matplotlib.pyplot as plt
 
 print("Loading data from files...")
 
-xcurrent = open("xcurrent.txt", 'r')
-xdesired = open("xdesired.txt", 'r') 
-q= open("q.txt",'r')
+xcurrent = open("xcurrent_diffk.txt", 'r')
+xdesired = open("xdesired_diffk.txt", 'r') 
+q= open("q_diffk.txt",'r')
 
 xc_x=np.array([]); xc_y=np.array([]); xc_z=np.array([])
 xd_x=np.array([]); xd_y=np.array([]); xd_z=np.array([])
@@ -64,9 +64,9 @@ tiempo=dt*np.arange(0,total)
 
 #fig, axs = plt.subplots(2,2)
 
-fig= plt.figure(figsize=(16,9))
+fig= plt.figure(figsize=(20,9))
 
-fig.suptitle("Posiciones cartesianas para k=100", fontsize=20,x=0.5,y=0.94)
+fig.suptitle("Configuraciones articulares", fontsize=20,x=0.5,y=0.94)
 axs0=plt.subplot(231)
 axs1=plt.subplot(232)
 axs2=plt.subplot(233)
@@ -113,7 +113,7 @@ tiempo=dt*np.arange(0,total)
 
 fig= plt.figure(figsize=(12,9))
 
-fig.suptitle("Posiciones cartesianas para k=0.5", fontsize=20,x=0.5,y=0.94)
+fig.suptitle("Posiciones cartesianas", fontsize=20,x=0.5,y=0.94)
 axs0=plt.subplot(221)
 axs1=plt.subplot(222)
 axs2=plt.subplot(212)
@@ -138,6 +138,7 @@ axs2.legend()
 
 # %% ERROR
 fig= plt.figure(figsize=(12,9))
+fig.suptitle("Error", fontsize=20,x=0.5,y=0.94)
 axs0=plt.subplot(221)
 axs1=plt.subplot(222)
 axs2=plt.subplot(212)
@@ -160,6 +161,7 @@ axs2.set_title('Error en Z vs tiempo')
 plt.show()
 
 # %% Creamos la figura 3D
+"""
 fig = plt.figure(figsize=(12,10))
 
 # Agrrgamos un plano 3D
@@ -180,4 +182,4 @@ ax_3d.set(xlabel="Posición en X (m)", ylabel="Posición en Y (m)", zlabel="Posi
 ax_3d.set_title("Espacio cartesiano", fontsize=22)
 # Mostramos el gráfico
 plt.show()
-plt.show()
+"""
