@@ -3,7 +3,7 @@
 import rospy
 from sensor_msgs.msg import JointState
 from markers import *
-from lab3functions import *
+from functions import *
 
 
 rospy.init_node("testInvKine")
@@ -13,17 +13,26 @@ bmarker      = BallMarker(color['RED'])
 bmarker_des  = BallMarker(color['GREEN'])
 
 # Joint names
-jnames = ['shoulder_pan_joint', 'shoulder_lift_joint', 'elbow_joint', 'wrist_1_joint', 'wrist_2_joint', 'wrist_3_joint']
+jnames = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
 
 # Desired position
-xd = np.array([0.94, 0.125, 0.249])
+#xd = np.array([0.12, 0.125, 0.149])
+#xd = np.array([0.2, 0.2, 0.179])
+#xd = np.array([-0.1, 0.15, 0.3])
+xd = np.array([-0.2, 0.15, 0.28])
 # Initial configuration
 q0 = np.array([0.0, -1.0, 1.7, -2.2, -1.6, 0.0])
+# -1.75 < q[0] < 2.79
+# -0.52 < q[1] < 1.22
+# -2.97 < q[2] < 1.05
+# -6.11 < q[3] < 6.11
+# -3.58 < q[4] < 0.63
+# -6.28 < q[5] < 6.28
 # Inverse kinematics
-q = ikine_ur5(xd, q0)
+q = ikine(xd, q0)
 
 # Resulting position (end effector with respect to the base link)
-T = fkine_ur5(q)
+T = fkine(q)
 print('Obtained value:\n', np.round(T,3))
 
 # Red marker shows the achieved position
